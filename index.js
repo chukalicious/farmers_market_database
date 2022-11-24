@@ -9,7 +9,11 @@ const Farmers = require("./api/farmers/farmers-model");
 server.get("/markets", (req, res) => {
   Farmers.find()
     .then((markets) => {
-      res.status(200).json(markets);
+      if (markets) {
+        res.status(200).json(markets);
+      } else {
+        res.status(404).json({ message: "there are no markets at the moment" });
+      }
     })
     .catch((error) => {
       console.log(error);
