@@ -26,12 +26,8 @@ server.get("/", (req, res) => {
   `);
 });
 
-server.listen(
-  // process.env.PORT ||
-  4000,
-  () => {
-    console.log(
-      `\n*** Server Running on http://localhost:${process.env.PORT}   ***\n`
-    );
-  }
-);
+server.listen(process.env.PORT || 4000, () => {
+  console.log(
+    `\n*** Server Running on http://localhost:${process.env.PORT}   ***\n`
+  );
+});
