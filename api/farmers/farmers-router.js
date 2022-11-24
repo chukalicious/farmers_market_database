@@ -1,19 +1,16 @@
 const express = require("express");
-const Dog = require("./dogs-model");
+const Farmers = require("./farmers-model");
 const router = express.Router();
 
-// DOGS ENDPOINTS
-// DOGS ENDPOINTS
-// DOGS ENDPOINTS
 router.get("/", (req, res) => {
-  Dog.find()
-    .then((dogs) => {
-      res.status(200).json(dogs);
+  Farmers.find()
+    .then((markets) => {
+      res.status(200).json(markets);
     })
     .catch((error) => {
       console.log(error);
       res.status(500).json({
-        message: "Error retrieving the dogs",
+        message: "Error retrieving the markets",
       });
     });
 });
